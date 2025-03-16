@@ -13,8 +13,8 @@ namespace Alcuino_MVC.Controllers
         private readonly ILogger<StudentController> _logger;
         private readonly MyDBContext _context;
 
-        //3.1 What is this method called?
-        //3.2 How important is this method?
+        //3.1 What is this "public StudentController()" called?
+        //3.2 How important is this?
         //3.3 Where can we get the instance of the injected services/class/middleware?
         public StudentController(ILogger<StudentController> logger, MyDBContext context)
         {
