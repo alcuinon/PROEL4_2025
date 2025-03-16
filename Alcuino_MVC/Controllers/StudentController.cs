@@ -19,7 +19,7 @@ namespace Alcuino_MVC.Controllers
         public StudentController(ILogger<StudentController> logger, MyDBContext context)
         {
             _logger = logger;
-            _context = context;
+            _context = context; //3.4 What's the use of this Line 22?
         }
 
         //4 How can we access/test this method?
