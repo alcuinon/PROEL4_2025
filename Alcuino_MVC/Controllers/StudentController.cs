@@ -55,7 +55,7 @@ namespace Alcuino_MVC.Controllers
             //7.3 Why getting a record dont need to use _context.SaveChanges() ?
             var students1 = _context.NaStudents.ToList();
 
-            //8 Explain the Line 58-61
+            //8 Explain the Line 59-62
             return View(new StudentIndexVM
             {
                 Students = students1
