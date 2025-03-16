@@ -9,7 +9,7 @@ namespace Alcuino_MVC.Controllers
     public class StudentController : Controller
     {
 
-        //2 Explain the Line 13 & 14
+        //2 Explain the Line 14
         private readonly ILogger<StudentController> _logger;
         private readonly MyDBContext _context;
 
