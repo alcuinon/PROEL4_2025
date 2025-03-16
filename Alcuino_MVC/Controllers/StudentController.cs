@@ -43,6 +43,7 @@ namespace Alcuino_MVC.Controllers
             //6.2 What is the reason why we need to check the student is not null?
             if(student != null)
             {
+                //6.3 Why we need to get the record first before updating anything?
                 student.Grade = 86.5m;
                 _context.NaStudents.Update(student);
 
