@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model IndexVM
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Person</th>
+                <th>Purpose</th>
+                <th>Amount</th>
+                <th>DueDate</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var lending in Model.Lendings)
+            {
+                <tr>
+                    <td>@lending.Id</td>
+                    <td>@lending.Person.Firstname @lending.Person.Lastname</td>
+                    <td>@lending.Purpose</td>
+                    <td>@lending.Amount</td>
+                    <td>@lending.DueDate</td>
+                    <td>
+                        <a class="btn btn-primary" href="Home/UpdateLendingPage?id=@lending.Id">Update</a>
+                        <a class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+</div>

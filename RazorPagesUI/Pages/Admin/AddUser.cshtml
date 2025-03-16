@@ -1,0 +1,53 @@
+﻿@page
+@model RazorPagesUI.Pages.Admin.AddUserModel
+@{
+
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <h4 class="alert-heading">Error!</h4>
+                    @Html.ValidationSummary()
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+            
+
+            <form method="post">
+                <div class="mb-3">
+                    <label for="userId" class="form-label">ID</label>
+                    <input type="number" class="form-control" id="userId" asp-for="User.Id" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="userName" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="userName" asp-for="User.Name" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="userEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="userEmail" asp-for="User.Email" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="userPassword" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="userPassword" asp-for="User.Password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@* <form method="post">
+    <input type="number" asp-for="User.Id" />
+    <input type="text" asp-for="User.Name" />
+    <input type="email" asp-for="User.Email" />
+    <input type="password" asp-for="User.Password" />
+    <button type="submit">Save</button>
+</form> *@

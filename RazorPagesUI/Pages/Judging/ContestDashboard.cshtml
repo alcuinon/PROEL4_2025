@@ -1,0 +1,41 @@
+﻿@page
+@model RazorPagesUI.Pages.Judging.ContestDashboardModel
+@{
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <a class="btn btn-primary" href="/judging/addcontestant">Add Contestant</a>
+            <button type="button" class="btn btn-primary" asp-page="/addscore">Add Score</button>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Score 1</th>
+                        <th>Score 2</th>
+                        <th>Score 3</th>
+                        <th>Average</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var contestant in Model.ContestantVM.Contestants)
+                    {
+                    <tr>
+                            <td>@contestant.Id</td>
+                            <td>@contestant.Name</td>
+                            @foreach (var score in Model.ContestantVM.ContestantScores.Where(s => s.ContestantId == contestant.Id))
+                            {
+                                <td>@score.Score</td>
+                            }
+                    </tr>
+                        
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

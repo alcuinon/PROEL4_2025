@@ -1,0 +1,26 @@
+﻿@page
+@model RazorPagesUI.Pages.Judging.AddScoresModel
+@{
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <form method="post">
+                @for (int i = 0; i < Model.Contestants.Count; i++)
+                {
+                    <input type="text" hidden asp-for="Scores[i].Id" value="@Guid.NewGuid().ToString()"/>
+                    <input type="text" hidden asp-for="Scores[i].ContestantId" value="@Model.Contestants[i].Id"/>
+
+                    <div class="mb-3">
+                        <label class="form-label">@Model.Contestants[i].Name</label>
+                        <input class="form-control" type="number" asp-for="Scores[i].Score" />
+                    </div>
+                }
+
+                <button type="submit" class="btn btn-primary">Create</button>
+            </form>
+        </div>
+    </div>
+</div>

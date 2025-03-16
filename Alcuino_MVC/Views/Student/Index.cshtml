@@ -1,0 +1,25 @@
+﻿@model StudentIndexVM
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<table action="table table-stripe">
+    <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Grade</th>
+    </thead>
+    <tbody>
+        @foreach (var student in Model.Students)
+        {
+            <td>@student.Id</td>
+            <td>@student.Name</td>
+            <td>@student.Age</td>
+            <td>@student.Grade</td>
+        }
+    </tbody>
+</table>

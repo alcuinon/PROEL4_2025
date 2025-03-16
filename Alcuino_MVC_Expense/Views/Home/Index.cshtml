@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model IndexVM
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Expense</th>
+                <th>User</th>
+                <th></th>
+            </tr>
+        </thead>
+       <tbody>
+            @foreach (var expense in Model.NaExpenseList)
+            {
+                <tr>
+                    <td>@expense.Id</td>
+                    <td>@expense.Name</td>
+                    <td>@expense.Expense</td>
+                    <td>@expense.User.Email</td>
+                    <td>
+                        <a class="btn btn-primary" asp-controller="Home" asp-action="CreateExpense">Create</a>
+                        <a class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+       </tbody>
+    </table>
+
+    
+</div>
