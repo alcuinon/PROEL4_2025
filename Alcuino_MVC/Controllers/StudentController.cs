@@ -1,5 +1,4 @@
-﻿using Alcuino.FakeDataGenerator;
-using Alcuino_MVC.Context;
+﻿using Alcuino_MVC.Context;
 using Alcuino_MVC.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,7 +9,7 @@ namespace Alcuino_MVC.Controllers
     public class StudentController : Controller
     {
 
-        //2 Explain the Line 14 & 15
+        //2 Explain the Line 13 & 14
         private readonly ILogger<StudentController> _logger;
         private readonly MyDBContext _context;
 
@@ -27,7 +26,7 @@ namespace Alcuino_MVC.Controllers
         public IActionResult Index()
         {
 
-            //5.1 Explain this Line 31-36
+            //5.1 Explain this Line 30-35
             _context.NaStudents.Add(new NaStudent
             {
                 Name = "Nino Alcuino",
@@ -55,7 +54,7 @@ namespace Alcuino_MVC.Controllers
             //7.3 Why getting a record dont need to use _context.SaveChanges() ?
             var students1 = _context.NaStudents.ToList();
 
-            //8 Explain the Line 59-62
+            //8 Explain the Line 58-61
             return View(new StudentIndexVM
             {
                 Students = students1
